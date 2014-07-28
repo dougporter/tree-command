@@ -21,7 +21,7 @@
 extern bool dflag, lflag, pflag, sflag, Fflag, aflag, fflag, uflag, gflag;
 extern bool Dflag, inodeflag, devflag, Rflag;
 extern bool noindent, force_color, xdev, nolinks, flimit;
-//extern char *title,
+/* extern char *title, */
 extern char *host, *sp;
 
 extern void (*listdir)(char *, int *, int *, u_long, dev_t);
@@ -417,7 +417,7 @@ void html_encode(FILE *fd, char *s)
 	break;
       default:
 	fputc(*s,fd);
-	//	fputc(isprint(*s)?*s:'?',fd);
+/*	fputc(isprint(*s)?*s:'?',fd); */
 	break;
     }
   }

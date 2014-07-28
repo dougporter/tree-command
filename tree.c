@@ -792,7 +792,7 @@ struct _info **getfulltree(char *d, u_long lev, dev_t dev, off_t *size, char **e
     stat(d,&sb);
     dev = sb.st_dev;
   }
-  // if the directory name matches, turn off pattern matching for contents
+  /* if the directory name matches, turn off pattern matching for contents */
   if (matchdirs && pattern) {
     lev_tmp = lev;
     start_rel_path = d + strlen(d);
@@ -863,7 +863,7 @@ struct _info **getfulltree(char *d, u_long lev, dev_t dev, off_t *size, char **e
 	saveino((*dir)->inode, (*dir)->dev);
 	(*dir)->child = getfulltree(path,lev+1,dev,&((*dir)->size),&((*dir)->err));
       }
-      // prune empty folders, unless they match the requested pattern
+      /* prune empty folders, unless they match the requested pattern */
       if (pruneflag && (*dir)->child == NULL &&
 	  !(matchdirs && pattern && patmatch((*dir)->name,pattern) == 1)) {
 	sp = *dir;
